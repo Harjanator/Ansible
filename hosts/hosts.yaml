@@ -1,0 +1,74 @@
+all:
+  children:
+    pve:
+      hosts:
+        pve-01:
+          ansible_host: pve-01.mgmt.gurulandia.lan
+        pve-02:
+          ansible_host: pve-02.mgmt.gurulandia.lan
+        pve-03:
+          ansible_host: pve-03.mgmt.gurulandia.lan
+    piholes:
+      hosts:
+        pihole-1:
+          ansible_host: pihole-1.mgmt.gurulandia.lan
+        pihole-2:
+          ansible_host: pihole-2.mgmt.gurulandia.lan
+    pfsenses:
+      hosts:
+        fw-1:
+          ansible_host: fw-1.mgmt.gurulandia.lan
+        fw-2:
+          ansible_host: fw-2.mgmt.gurulandia.lan
+    pbs:
+      hosts:
+        pbs-01:
+          ansible_host: pbs-01.mgmt.gurulandia.lan
+    rpis:
+      hosts:
+        rpi-01:
+          ansible_host: rpi-01.mgmt.gurulandia.lan
+    lxc:
+      hosts:
+        docker-01:
+          ansible_host: gl-v-docker-01.mgmt.gurulandia.lan
+    test:
+      hosts:
+        ansible-test-1:
+          ansible_host: 192.168.99.90
+        #ansible_test_2:
+          #ansible_host: 192.168.99.201
+    kubecp:
+      hosts:
+        kube-cp-1:
+          ansible_host: 192.168.99.70
+        kube-cp-2:
+          ansible_host: 192.168.99.71
+        kube-cp-3:
+          ansible_host: 192.168.99.72
+        kube-wr-1:
+          ansible_host: 192.168.99.74
+        kube-wr-2:
+          ansible_host: 192.168.99.75
+        kube-wr-3:
+          ansible_host: 192.168.99.76
+        kube-lh-1:
+          ansible_host: 192.168.99.77
+        kube-lh-2:
+          ansible_host: 192.168.99.78
+        kube-lh-3:
+          ansible_host: 192.168.99.79
+    lservers:
+      hosts:
+        lsrv1:
+          ansible_host: 192.168.99.60
+        lsrv2:
+          ansible_host: 192.168.99.61
+        lsrv3:
+          ansible_host: 192.168.99.62
+        lsrv4:
+          ansible_host: 192.168.99.63
+          ansible_user: root
+  vars:
+      ansible_port: 77
+      ansible_user: gurulandia
